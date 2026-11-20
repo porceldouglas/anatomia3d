@@ -1,0 +1,158 @@
+// Nomes em português e notas clínicas das estruturas da face.
+// "r: true" marca estruturas destacadas no modo Zonas de risco.
+export const CATS = {
+  pele:  { nome: 'Pele',        cor: 0xe8b89a },
+  fasc:  { nome: 'Fáscias e tendões', cor: 0xd8cbb0 },
+  musc:  { nome: 'Músculos',    cor: 0xb8423a },
+  osso:  { nome: 'Ossos',       cor: 0xece3cf },
+  dente: { nome: 'Dentes',      cor: 0xfaf7ee },
+  cart:  { nome: 'Cartilagens', cor: 0xa9c7d6 },
+  olho:  { nome: 'Olhos',       cor: 0xf4f4f4 },
+  glan:  { nome: 'Glândulas',   cor: 0xd9b54a },
+  art:   { nome: 'Artérias',    cor: 0xe0262b },
+  veia:  { nome: 'Veias',       cor: 0x2f5fd0 },
+  nerv:  { nome: 'Nervos',      cor: 0xf2d22e },
+  orgao: { nome: 'Órgãos',      cor: 0xc77a8a },
+  nervc: { nome: 'Sistema nervoso', cor: 0xe6c27a },
+};
+
+export const INFO = {
+  // MÚSCULOS DA MÍMICA
+  'Frontalis muscle': { pt: 'Músculo frontal', info: 'Eleva as sobrancelhas e forma as rugas horizontais da testa. Único elevador da sobrancelha.', clin: 'Toxina: aplicar acima da metade superior da testa, respeitando distância da sobrancelha para evitar ptose de supercílio.' },
+  'Procerus muscle': { pt: 'Músculo prócero', info: 'Puxa a pele da glabela para baixo, formando a ruga horizontal na raiz do nariz.', clin: 'Toxina: ponto central da glabela. Região de alto risco vascular para preenchedores.' },
+  'Corrugator supercilii': { pt: 'Músculo corrugador do supercílio', info: 'Aproxima as sobrancelhas, formando as rugas verticais da glabela ("11").', clin: 'Toxina: aplicação profunda na porção medial e mais superficial na lateral. Atenção à proximidade do levantador da pálpebra (risco de ptose palpebral).' },
+  'Orbital part of orbicularis oculi': { pt: 'Orbicular do olho (parte orbital)', info: 'Fecha o olho com força. Responsável pelos "pés de galinha".', clin: 'Toxina: pontos laterais, superficiais, a cerca de 1 cm da borda orbital.' },
+  'Palpebral part of orbicularis oculi': { pt: 'Orbicular do olho (parte palpebral)', info: 'Fecha as pálpebras suavemente (piscar).', clin: '' },
+  'Nasalis muscle': { pt: 'Músculo nasal', info: 'Comprime e dilata a narina. Forma as "bunny lines" no dorso nasal.', clin: 'Toxina: pontos laterais no dorso nasal.' },
+  'Depressor septi nasi': { pt: 'Músculo abaixador do septo nasal', info: 'Puxa a ponta do nariz para baixo ao sorrir.', clin: 'Toxina: ponto na base da columela.' },
+  'Levator labii superioris': { pt: 'Músculo levantador do lábio superior', info: 'Eleva o lábio superior.', clin: 'Envolvido no sorriso gengival.' },
+  'Levator nasolabialis': { pt: 'Levantador do lábio superior e da asa do nariz', info: 'Eleva o lábio superior e dilata a narina.', clin: 'Principal alvo da toxina no sorriso gengival (ponto de Yonsei, lateral à asa nasal).' },
+  'Levator anguli oris': { pt: 'Músculo levantador do ângulo da boca', info: 'Eleva a comissura labial. Fica abaixo do levantador do lábio superior.', clin: '' },
+  'Zygomaticus major muscle': { pt: 'Músculo zigomático maior', info: 'Puxa a comissura para cima e para fora. Principal músculo do sorriso.', clin: 'Evitar difusão de toxina para ele (sorriso assimétrico).' },
+  'Zygomaticus minor muscle': { pt: 'Músculo zigomático menor', info: 'Eleva o lábio superior, aprofundando o sulco nasolabial.', clin: '' },
+  'Risorius muscle': { pt: 'Músculo risório', info: 'Puxa a comissura lateralmente.', clin: '' },
+  'Bucinator': { pt: 'Músculo bucinador', info: 'Comprime a bochecha contra os dentes (soprar, mastigar).', clin: 'Atravessado pelo ducto parotídeo.' },
+  'Orbicularis oris muscle': { pt: 'Músculo orbicular da boca', info: 'Fecha e projeta os lábios. Forma o "código de barras" peribucal.', clin: 'Toxina em microdoses na linha do vermelhão. A artéria labial corre entre ele e a mucosa.' },
+  'Depressor anguli oris': { pt: 'Músculo abaixador do ângulo da boca', info: 'Puxa a comissura para baixo (expressão de tristeza).', clin: 'Toxina: ponto baixo e lateral, próximo à borda da mandíbula, para não atingir o abaixador do lábio inferior.' },
+  'Depressor labii inferioris': { pt: 'Músculo abaixador do lábio inferior', info: 'Abaixa o lábio inferior.', clin: 'Atingi-lo sem querer gera assimetria do sorriso.' },
+  'Mentalis muscle': { pt: 'Músculo mentual', info: 'Eleva e enruga a pele do queixo ("casca de laranja").', clin: 'Toxina: pontos centrais baixos no mento.' },
+  'Platysma': { pt: 'Músculo platisma', info: 'Músculo fino do pescoço que tensiona a pele e puxa o lábio inferior para baixo.', clin: 'Toxina nas bandas platismais (Nefertiti lift).' },
+  'Temporoparietalis muscle': { pt: 'Músculo temporoparietal', info: 'Músculo fino da região temporal, parte do epicrânio.', clin: '' },
+  'Occipitalis muscle': { pt: 'Músculo occipital', info: 'Puxa o couro cabeludo para trás. Ventre posterior do occipitofrontal.', clin: '' },
+  'Epicranial aponeurosis': { pt: 'Aponeurose epicrânica (gálea)', info: 'Lâmina tendínea que liga os músculos frontal e occipital.', clin: '' },
+  // MASTIGAÇÃO
+  'Superficial part of masseter': { pt: 'Masseter (parte superficial)', info: 'Eleva a mandíbula. Músculo mais forte da mastigação.', clin: 'Toxina para bruxismo e afinamento do terço inferior. Aplicar na zona segura abaixo da linha tragus-comissura, longe do risório e da parótida.' },
+  'Deep part of masseter': { pt: 'Masseter (parte profunda)', info: 'Eleva e retrai a mandíbula.', clin: '' },
+  'Temporalis muscle': { pt: 'Músculo temporal', info: 'Eleva e retrai a mandíbula. Preenche a fossa temporal.', clin: 'Toxina em bruxismo. Preenchimento de têmpora: plano supraperiosteal profundo é o mais usado.' },
+  'Medial pterygoid muscle': { pt: 'Músculo pterigóideo medial', info: 'Eleva a mandíbula, trabalha junto com o masseter.', clin: '' },
+  'Inferior head of lateral pterygoid muscle': { pt: 'Pterigóideo lateral (cabeça inferior)', info: 'Protrai e abre a mandíbula.', clin: '' },
+  'Superior head of lateral pterygoid muscle': { pt: 'Pterigóideo lateral (cabeça superior)', info: 'Estabiliza o disco da ATM.', clin: '' },
+  'Anterior belly of digastric muscle': { pt: 'Digástrico (ventre anterior)', info: 'Abaixa a mandíbula e eleva o hioide.', clin: '' },
+  'Mylohyoid muscle': { pt: 'Músculo milo-hióideo', info: 'Forma o assoalho da boca.', clin: 'Relevante na lipólise de papada (submento).' },
+  // OSSOS
+  'Frontal bone': { pt: 'Osso frontal', info: 'Forma a testa e o teto das órbitas.', clin: 'Forames/incisuras supraorbital e supratroclear na borda orbital superior.' },
+  'Parietal bone': { pt: 'Osso parietal', info: 'Forma o teto e as laterais do crânio.', clin: '' },
+  'Occipital bone': { pt: 'Osso occipital', info: 'Forma a parte posterior e a base do crânio.', clin: '' },
+  'Temporal bone': { pt: 'Osso temporal', info: 'Contém o ouvido. Forma parte do arco zigomático e a articulação temporomandibular.', clin: '' },
+  'Sphenoid bone': { pt: 'Osso esfenoide', info: 'Osso central da base do crânio, em forma de borboleta.', clin: '' },
+  'Ethmoid bone': { pt: 'Osso etmoide', info: 'Fica entre as órbitas e forma parte da cavidade nasal.', clin: '' },
+  'Mandible': { pt: 'Mandíbula', info: 'Único osso móvel do crânio. Sustenta os dentes inferiores.', clin: 'Forame mentual na altura do 2º pré-molar. Contorno mandibular é alvo de preenchimento.' },
+  'Maxilla': { pt: 'Maxila', info: 'Forma o terço médio da face e sustenta os dentes superiores.', clin: 'Forame infraorbital cerca de 1 cm abaixo da borda orbital, na linha da pupila.' },
+  'Zygomatic bone': { pt: 'Osso zigomático', info: 'Forma a maçã do rosto.', clin: 'Principal suporte ósseo para preenchimento de malar.' },
+  'Nasal bone': { pt: 'Osso nasal', info: 'Forma a ponte do nariz.', clin: 'Rinomodelação: dorso nasal é zona de alto risco vascular.' },
+  'Lacrimal bone': { pt: 'Osso lacrimal', info: 'Pequeno osso da parede medial da órbita.', clin: '' },
+  'Palatine bone': { pt: 'Osso palatino', info: 'Forma a parte posterior do palato duro.', clin: '' },
+  'Vomer': { pt: 'Vômer', info: 'Forma a parte posterior do septo nasal.', clin: '' },
+  'Inferior nasal concha bone': { pt: 'Concha nasal inferior', info: 'Osso da parede lateral da cavidade nasal.', clin: '' },
+  'Hyoid bone': { pt: 'Osso hioide', info: 'Osso em U no pescoço, sem articulação com outros ossos.', clin: 'Referência do ângulo cervicomentual.' },
+  'Atlas (C1)': { pt: 'Atlas (C1)', info: 'Primeira vértebra cervical.', clin: '' },
+  'Axis (C2)': { pt: 'Áxis (C2)', info: 'Segunda vértebra cervical.', clin: '' },
+  'Vertebra C3': { pt: 'Vértebra C3', info: '', clin: '' },
+  'Vertebra C4': { pt: 'Vértebra C4', info: '', clin: '' },
+  // CARTILAGENS / OLHOS
+  'Major alar cartilage': { pt: 'Cartilagem alar maior', info: 'Forma a ponta e as asas do nariz.', clin: '' },
+  'Lateral process of nasal septal cartilage': { pt: 'Cartilagem lateral do nariz', info: 'Sustenta o terço médio do dorso nasal.', clin: '' },
+  'Nasal septal cartilage': { pt: 'Cartilagem do septo nasal', info: 'Divide a cavidade nasal ao meio.', clin: '' },
+  'Sclera': { pt: 'Esclera', info: 'Parte branca do olho.', clin: '' },
+  'Cornea': { pt: 'Córnea', info: 'Parte transparente da frente do olho.', clin: '' },
+  'Iris': { pt: 'Íris', info: 'Parte colorida do olho.', clin: '' },
+  // GLÂNDULAS
+  'Parotid gland': { pt: 'Glândula parótida', info: 'Maior glândula salivar, à frente da orelha. O nervo facial passa por dentro dela.', clin: 'Evitar ao aplicar toxina no masseter (risco de afetar a glândula).' },
+  '(Accessory parotid gland)': { pt: 'Parótida acessória', info: 'Pequena porção da parótida ao longo do ducto.', clin: '' },
+  'Submandibular gland': { pt: 'Glândula submandibular', info: 'Glândula salivar abaixo da mandíbula.', clin: 'Não confundir com gordura submentual em procedimentos de papada.' },
+  'Sublingual gland': { pt: 'Glândula sublingual', info: 'Glândula salivar no assoalho da boca.', clin: '' },
+  'Lacrimal gland': { pt: 'Glândula lacrimal', info: 'Produz a lágrima. Fica na parte superolateral da órbita.', clin: '' },
+  'Parotid duct': { pt: 'Ducto parotídeo (de Stenon)', info: 'Leva a saliva da parótida até a boca, abrindo-se na altura do 2º molar superior.', clin: 'Trajeto aproximado na linha entre o tragus e a comissura labial. Evitar no preenchimento profundo de bochecha.', r: true },
+  // ARTÉRIAS
+  'Facial artery': { pt: 'Artéria facial', info: 'Cruza a borda da mandíbula à frente do masseter e sobe tortuosa pela face em direção ao canto do nariz.', clin: 'Zona de risco: borda mandibular anterior ao masseter, região perioral e sulco nasolabial. Sua profundidade varia entre pessoas.', r: true },
+  'Angular artery': { pt: 'Artéria angular', info: 'Ramo final da facial, sobe ao lado do nariz até o canto interno do olho.', clin: 'Alto risco: oclusão pode causar necrose de asa nasal e, por fluxo retrógrado, comprometimento visual. Cuidado no sulco nasolabial alto e lateral do nariz.', r: true },
+  'Superior labial artery': { pt: 'Artéria labial superior', info: 'Corre dentro do lábio superior, geralmente entre o músculo orbicular e a mucosa.', clin: 'Preenchimento labial: manter-se superficial, no plano submucoso/vermelhão conforme a técnica, e aspirar/injetar devagar.', r: true },
+  'Inferior labial artery': { pt: 'Artéria labial inferior', info: 'Irriga o lábio inferior.', clin: 'Mesmo cuidado do lábio superior.', r: true },
+  'Superficial temporal artery': { pt: 'Artéria temporal superficial', info: 'Ramo terminal da carótida externa, sobe à frente da orelha. Pulso palpável.', clin: 'Zona de risco no preenchimento de têmpora (plano superficial).', r: true },
+  'Frontal branch of superficial temporal artery': { pt: 'Ramo frontal da a. temporal superficial', info: 'Atravessa a têmpora em direção à testa.', clin: 'Visível e palpável na têmpora. Evitar no plano superficial.', r: true },
+  'Supra-orbital artery': { pt: 'Artéria supraorbital', info: 'Sai da órbita pela incisura supraorbital e irriga a testa.', clin: 'Alto risco: comunica-se com a artéria oftálmica. Embolia pode levar à cegueira. Cuidado na testa e sobrancelha.', r: true },
+  'Supratrochlear artery': { pt: 'Artéria supratroclear', info: 'Sai da órbita medialmente e sobe pela glabela e testa.', clin: 'Glabela é uma das áreas de maior risco para preenchedor (cegueira e necrose).', r: true },
+  'Infra-orbital artery': { pt: 'Artéria infraorbital', info: 'Sai pelo forame infraorbital, abaixo do olho.', clin: 'Atenção no preenchimento de olheira e malar medial.', r: true },
+  'Transverse facial artery': { pt: 'Artéria transversa da face', info: 'Corre horizontalmente abaixo do arco zigomático, sobre o masseter.', clin: '', r: true },
+  'Submental artery': { pt: 'Artéria submentual', info: 'Ramo da facial abaixo da mandíbula.', clin: 'Atenção em procedimentos de papada e mento.' },
+  'Mental branch of inferior alveolar artery': { pt: 'Artéria mentual', info: 'Sai pelo forame mentual e irriga o queixo.', clin: 'Forame mentual: altura do 2º pré-molar inferior.', r: true },
+  'External carotid artery': { pt: 'Artéria carótida externa', info: 'Principal fonte de sangue da face.', clin: '' },
+  'Internal carotid artery': { pt: 'Artéria carótida interna', info: 'Irriga o cérebro e, pela artéria oftálmica, os olhos.', clin: 'É por esse sistema que um êmbolo de preenchedor pode chegar à retina.' },
+  'Maxillary artery': { pt: 'Artéria maxilar', info: 'Ramo profundo da carótida externa, irriga maxila, mandíbula e músculos da mastigação.', clin: '' },
+  'Occipital artery': { pt: 'Artéria occipital', info: 'Irriga a parte posterior do couro cabeludo.', clin: '' },
+  'Ophthalmic artery': { pt: 'Artéria oftálmica', info: 'Ramo da carótida interna que irriga o olho e a órbita. Dá origem às artérias supraorbital e supratroclear.', clin: 'Elo entre a face e a retina: explica o risco de cegueira com preenchedores.', r: true },
+  'Buccal artery': { pt: 'Artéria bucal', info: 'Irriga a bochecha e o bucinador.', clin: '' },
+  'Inferior alveolar artery': { pt: 'Artéria alveolar inferior', info: 'Corre dentro da mandíbula e irriga os dentes inferiores.', clin: '' },
+  'Anterior deep temporal artery': { pt: 'Artéria temporal profunda anterior', info: 'Irriga o músculo temporal por dentro.', clin: '' },
+  'Posterior deep temporal artery': { pt: 'Artéria temporal profunda posterior', info: 'Irriga o músculo temporal por dentro.', clin: '' },
+  // VEIAS
+  'Facial vein': { pt: 'Veia facial', info: 'Drena a face. Corre posterior à artéria facial, de trajeto mais retilíneo.', clin: '', r: true },
+  'Angular vein': { pt: 'Veia angular', info: 'Começa no canto interno do olho e se comunica com as veias oftálmicas.', clin: 'Comunicação com o seio cavernoso: infecção na região pode se espalhar para dentro do crânio.', r: true },
+  'Superior labial vein': { pt: 'Veia labial superior', info: 'Drena o lábio superior.', clin: '' },
+  'Inferior labial veins': { pt: 'Veias labiais inferiores', info: 'Drenam o lábio inferior.', clin: '' },
+  'Superficial temporal veins': { pt: 'Veias temporais superficiais', info: 'Drenam a região temporal.', clin: 'Preenchimento de têmpora: veias calibrosas no plano superficial.', r: true },
+  'Retromandibular vein': { pt: 'Veia retromandibular', info: 'Passa por dentro da parótida, atrás do ramo da mandíbula.', clin: '' },
+  'Anterior division of retromandibular vein': { pt: 'Veia retromandibular (divisão anterior)', info: 'Une-se à veia facial.', clin: '' },
+  'Posterior division of retromandibular vein': { pt: 'Veia retromandibular (divisão posterior)', info: 'Forma a jugular externa.', clin: '' },
+  'External jugular vein': { pt: 'Veia jugular externa', info: 'Desce superficialmente pelo pescoço sobre o esternocleidomastóideo.', clin: '' },
+  'Common facial vein': { pt: 'Veia facial comum', info: 'Desemboca na veia jugular interna.', clin: '' },
+  'Submental vein': { pt: 'Veia submentual', info: 'Drena a região abaixo do queixo.', clin: '' },
+  'Superior ophthalmic vein': { pt: 'Veia oftálmica superior', info: 'Drena a órbita para o seio cavernoso.', clin: '' },
+  'Inferior ophthalmic vein': { pt: 'Veia oftálmica inferior', info: 'Drena a parte inferior da órbita.', clin: '' },
+  'Posterior auricular vein': { pt: 'Veia auricular posterior', info: 'Drena a região atrás da orelha.', clin: '' },
+  'Maxillary veins': { pt: 'Veias maxilares', info: 'Drenam o plexo pterigóideo.', clin: '' },
+  'Internal jugular vein': { pt: 'Veia jugular interna', info: 'Principal veia de drenagem da cabeça.', clin: '' },
+  'Occipital vein': { pt: 'Veia occipital', info: 'Drena a parte posterior do couro cabeludo.', clin: '' },
+  // NERVOS
+  'Facial nerve (VII)': { pt: 'Nervo facial (VII)', info: 'Nervo motor de todos os músculos da mímica. Sai pelo forame estilomastóideo, entra na parótida e se divide em ramos temporal, zigomático, bucal, marginal da mandíbula e cervical.', clin: 'O ramo temporal (frontal) é superficial ao cruzar o arco zigomático. O ramo marginal corre perto da borda da mandíbula.', r: true },
+  'Trigeminal nerve (V)': { pt: 'Nervo trigêmeo (V)', info: 'Nervo da sensibilidade da face e motor da mastigação. Divide-se em oftálmico, maxilar e mandibular.', clin: '' },
+  'Ophthalmic nerve': { pt: 'Nervo oftálmico (V1)', info: 'Sensibilidade da testa, pálpebra superior e dorso do nariz (via nervos supraorbital e supratroclear).', clin: 'Bloqueio supraorbital: incisura na linha da pupila.' },
+  'Maxillary nerve': { pt: 'Nervo maxilar (V2)', info: 'Sensibilidade do terço médio da face, lábio superior e dentes superiores. Sai na face pelo forame infraorbital.', clin: 'Bloqueio infraorbital para procedimentos no lábio superior.', r: true },
+  'Mental nerve': { pt: 'Nervo mentual', info: 'Sensibilidade do lábio inferior e queixo. Sai pelo forame mentual.', clin: 'Bloqueio mentual: altura do 2º pré-molar inferior.', r: true },
+  'Inferior alveolar nerve': { pt: 'Nervo alveolar inferior', info: 'Corre dentro da mandíbula, sensibilidade dos dentes inferiores.', clin: '' },
+  'Buccal nerve': { pt: 'Nervo bucal', info: 'Sensibilidade da bochecha e da gengiva.', clin: '' },
+  'Anterior division of mandibular nerve': { pt: 'Nervo mandibular (divisão anterior)', info: 'Motor dos músculos da mastigação.', clin: '' },
+  'Posterior division of mandibular nerve': { pt: 'Nervo mandibular (divisão posterior)', info: 'Dá origem aos nervos alveolar inferior, lingual e auriculotemporal.', clin: '' },
+  'Lingual nerve': { pt: 'Nervo lingual', info: 'Sensibilidade dos 2/3 anteriores da língua.', clin: '' },
+};
+
+// Regiões de pele (nomes curtos)
+const PELE = {
+  'Frontal region': 'Região frontal (testa)', 'Parietal region': 'Região parietal', 'Occipital region': 'Região occipital', 'Temporal region': 'Região temporal (têmpora)',
+  'Orbital region': 'Região orbital', 'Infra-orbital region': 'Região infraorbital (olheira)', 'Nasal region': 'Região nasal', 'Oral region': 'Região oral (lábios)',
+  'Mental region': 'Região mentual (queixo)', 'Buccal region': 'Região bucal (bochecha)', 'Zygomatic region': 'Região zigomática (malar)', 'Parotideomasseteric region': 'Região parotideomassetérica',
+  'Auricular region': 'Região auricular', 'Mastoid region': 'Região mastóidea', 'Philtrum': 'Filtro labial', 'Nasolabial sulcus': 'Sulco nasolabial', 'Mentolabial sulcus': 'Sulco mentolabial',
+  'Labial commissure': 'Comissura labial', 'Angle of mouth': 'Ângulo da boca', 'Eyebrow': 'Supercílio', 'Submandibular triangle': 'Trígono submandibular', 'Carotid triangle': 'Trígono carótico',
+  'Helix': 'Hélice', 'Antihelix': 'Anti-hélice', 'Lobule of auricle': 'Lóbulo da orelha', 'Tragus': 'Trago', 'Antitragus': 'Antítrago', 'Scapha': 'Escafa', 'Triangular fossa': 'Fossa triangular', 'Cavity of concha': 'Cavidade da concha', 'Cymba conchae': 'Cimba da concha',
+};
+for (const [k, v] of Object.entries(PELE)) INFO[k] = { pt: v, info: '', clin: '' };
+INFO['Nasolabial sulcus'].clin = 'Preenchimento: a artéria facial/angular corre próxima ao sulco, sobretudo no terço superior.';
+INFO['Infra-orbital region'].clin = 'Olheira: pele fina, risco de efeito Tyndall e proximidade do forame infraorbital.';
+INFO['Temporal region'].clin = 'Têmpora: artéria temporal superficial e veias calibrosas no plano superficial.';
+
+const DENTES = { 'medial incisor': 'Incisivo central', 'lateral incisor': 'Incisivo lateral', 'canine': 'Canino', 'first premolar': '1º pré-molar', 'second premolar': '2º pré-molar', 'first molar tooth': '1º molar', 'second molar tooth': '2º molar' };
+for (const [k, v] of Object.entries(DENTES)) {
+  INFO['Upper ' + k] = { pt: v + ' superior', info: '', clin: '' };
+  INFO['Lower ' + k] = { pt: v + ' inferior', info: '', clin: '' };
+}
+INFO['Lower second premolar'].clin = 'Referência do forame mentual.';

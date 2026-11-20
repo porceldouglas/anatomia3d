@@ -1,0 +1,6 @@
+Modelos 3D (pasta models/): derivados do Z-Anatomy (https://www.z-anatomy.com),
+que por sua vez se baseia no BodyParts3D (DBCLS). Licença Creative Commons
+Atribuição-CompartilhaIgual 4.0 (CC BY-SA 4.0): https://creativecommons.org/licenses/by-sa/4.0/
+Os modelos foram convertidos, simplificados e comprimidos para uso offline.
+
+Three.js (pasta lib/): licença MIT, ver lib/THREE_LICENSE.txt.

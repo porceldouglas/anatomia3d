@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Anatomia 3D</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Anatomia 3D">
+<meta name="theme-color" content="#14161a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" href="icons/icon-192.png">
+<style>
+:root{--bg:#14161a;--panel:rgba(24,27,33,.92);--line:#2c313a;--txt:#e9e6df;--mut:#9a9ea6;--acc:#e0b07a;--risk:#ff4d4d}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;overflow:hidden;background:var(--bg);color:var(--txt);font:15px/1.4 -apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;-webkit-user-select:none;user-select:none;overscroll-behavior:none}
+#c{position:fixed;inset:0;width:100%;height:100%;touch-action:none;display:block}
+button{font:inherit;color:inherit;background:#232831;border:1px solid var(--line);border-radius:10px;padding:9px 12px;min-height:40px;cursor:pointer}
+button.on{background:var(--acc);color:#1b1b1b;border-color:var(--acc)}
+#top{position:fixed;top:calc(env(safe-area-inset-top) + 10px);left:50%;transform:translateX(-50%);display:flex;gap:6px;background:var(--panel);padding:6px;border-radius:14px;border:1px solid var(--line);z-index:5}
+#top button{min-width:84px}
+#panel{position:fixed;top:calc(env(safe-area-inset-top) + 10px);left:calc(env(safe-area-inset-left) + 10px);bottom:calc(env(safe-area-inset-bottom) + 10px);width:290px;background:var(--panel);border:1px solid var(--line);border-radius:16px;display:flex;flex-direction:column;z-index:4;transition:transform .25s}
+#panel.hide{transform:translateX(calc(-100% - 20px))}
+#panel h1{font-size:17px;margin:14px 16px 4px;font-weight:650;letter-spacing:.2px}
+#panel h2{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--mut);margin:14px 16px 6px;font-weight:600}
+#scroll{overflow-y:auto;-webkit-overflow-scrolling:touch;flex:1;padding-bottom:12px}
+.layer{display:flex;align-items:center;gap:10px;padding:6px 16px}
+.layer .sw{width:16px;height:16px;border-radius:5px;flex:none;border:1px solid rgba(255,255,255,.25)}
+.layer label{flex:1;display:flex;align-items:center;gap:10px;min-height:34px}
+.layer input[type=checkbox]{width:22px;height:22px;accent-color:var(--acc)}
+.layer input[type=range]{width:90px;accent-color:var(--acc)}
+.row{display:flex;gap:6px;flex-wrap:wrap;padding:0 16px}
+.row button{flex:1;min-width:0;padding:8px 6px;font-size:14px}
+#risk{margin:4px 16px 0;width:calc(100% - 32px);border-color:#5a2a2a;background:#2a1c1e}
+#risk.on{background:var(--risk);color:#fff;border-color:var(--risk)}
+#search{margin:2px 16px 6px;width:calc(100% - 32px);padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:#1b1f26;color:var(--txt);font:inherit;-webkit-user-select:text;user-select:text}
+#list{padding:0 8px}
+#list div{padding:9px 10px;border-radius:8px;cursor:pointer;display:flex;gap:8px;align-items:center}
+#list div:active,#list div.sel{background:#2a303a}
+#list i{width:10px;height:10px;border-radius:3px;flex:none}
+#list small{color:var(--mut);margin-left:auto}
+#toggle{position:fixed;left:calc(env(safe-area-inset-left) + 310px);top:calc(env(safe-area-inset-top) + 10px);z-index:5;transition:left .25s;width:44px;padding:0;font-size:20px}
+#toggle.closed{left:calc(env(safe-area-inset-left) + 10px)}
+#card{position:fixed;right:calc(env(safe-area-inset-right) + 10px);bottom:calc(env(safe-area-inset-bottom) + 10px);width:min(380px,calc(100vw - 20px));background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px 16px;z-index:6;display:none}
+#card.show{display:block}
+#card h3{margin:0 30px 2px 0;font-size:18px}
+#card .la{color:var(--mut);font-style:italic;font-size:13px}
+#card p{margin:8px 0 0}
+#card .clin{background:#2a1c1e;border-left:3px solid var(--risk);padding:8px 10px;border-radius:6px;margin-top:10px;font-size:14px}
+#card .acts{display:flex;gap:6px;margin-top:12px}
+#card .acts button{flex:1;font-size:14px}
+#card .x{position:absolute;top:8px;right:8px;width:36px;min-height:36px;padding:0;border:none;background:none;font-size:22px;color:var(--mut)}
+#load{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;background:var(--bg);z-index:10;font-size:15px;color:var(--mut)}
+#load .bar{width:220px;height:4px;background:#2a2f37;border-radius:2px;overflow:hidden}
+#load .bar i{display:block;height:100%;width:0;background:var(--acc);transition:width .2s}
+#views{position:fixed;right:calc(env(safe-area-inset-right) + 10px);top:calc(env(safe-area-inset-top) + 10px);display:flex;flex-direction:column;gap:6px;z-index:5}
+#views button{width:64px;font-size:13px;padding:6px}
+#credit{font-size:11px;color:var(--mut);padding:10px 16px 14px;border-top:1px solid var(--line)}
+#credit a{color:var(--mut)}
+#off{font-size:11px;color:#7fbf7f;padding:0 16px}
+@media (max-width:700px){#panel{width:260px}#toggle{left:calc(env(safe-area-inset-left) + 280px)}#top button{min-width:64px}}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<div id="load"><div id="loadtxt">Carregando modelo 3D…</div><div class="bar"><i id="loadbar"></i></div></div>
+
+<div id="top">
+  <button id="mFace" class="on">Face</button>
+  <button id="mBody">Corpo</button>
+</div>
+
+<button id="toggle">☰</button>
+<aside id="panel">
+  <h1>Anatomia 3D</h1>
+  <div id="off"></div>
+  <div id="scroll">
+    <button id="risk">⚠ Zonas de risco</button>
+    <h2>Camadas</h2>
+    <div id="layers"></div>
+    <h2>Lado</h2>
+    <div class="row">
+      <button data-side="both" class="on">Ambos</button>
+      <button data-side="r">Direito</button>
+      <button data-side="l">Esquerdo</button>
+    </div>
+    <h2>Estruturas</h2>
+    <input id="search" type="search" placeholder="Buscar (ex.: angular, masseter)" autocomplete="off">
+    <div id="list"></div>
+  </div>
+  <div id="credit">Modelos: <a href="https://www.z-anatomy.com" target="_blank" rel="noopener">Z-Anatomy</a> (CC BY-SA 4.0), baseado em BodyParts3D. Material de estudo: não substitui o conhecimento clínico nem a variação anatômica de cada paciente.</div>
+</aside>
+
+<div id="views">
+  <button data-view="front">Frente</button>
+  <button data-view="tq">¾</button>
+  <button data-view="side">Perfil</button>
+  <button data-view="back">Trás</button>
+  <button data-view="top">Cima</button>
+  <button id="showAll">Tudo</button>
+</div>
+
+<div id="card">
+  <button class="x" id="cardX">×</button>
+  <h3 id="cName"></h3>
+  <div class="la" id="cLa"></div>
+  <p id="cInfo"></p>
+  <div class="clin" id="cClin"></div>
+  <div class="acts">
+    <button id="aHide">Ocultar</button>
+    <button id="aIso">Isolar</button>
+    <button id="aFocus">Centralizar</button>
+  </div>
+</div>
+
+<script type="importmap">{"imports":{"three":"./lib/three.module.js","three/addons/":"./lib/jsm/"}}</script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
