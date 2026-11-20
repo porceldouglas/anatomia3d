@@ -1,21 +1,11 @@
-ANATOMIA 3D: COMO INSTALAR NO IPAD (OFFLINE, SEM APP STORE)
+ANATOMIA 3D: INSTALAR SÓ COM O IPAD
 
-1. No computador, entre em github.com, clique em "New repository", dê o nome
-   anatomia3d, deixe como Public e crie.
-2. Na página do repositório, clique em "uploading an existing file" e arraste
-   TODO o conteúdo desta pasta (index.html, app.js, pastas lib, models, icons etc.).
-   Clique em "Commit changes".
-3. Vá em Settings > Pages. Em "Source" escolha "Deploy from a branch",
-   branch "main", pasta "/ (root)" e salve. Em 1 ou 2 minutos aparece o link:
-   https://SEU-USUARIO.github.io/anatomia3d/
-4. No iPad, abra esse link no Safari (com internet). Espere aparecer
-   "● Disponível offline" no topo do painel e toque uma vez em "Corpo".
-5. Toque em Compartilhar > "Adicionar à Tela de Início".
-6. Abra pelo ícone. A partir daí funciona sem internet.
-
-Para atualizar o app depois: troque os arquivos no GitHub, abra o app no iPad
-com internet, feche e abra de novo.
-
-Uso: um dedo gira, dois dedos aproximam e arrastam. Toque numa estrutura para
-ver nome, função e nota clínica. "Zonas de risco" destaca vasos e nervos
-críticos para harmonização.
+1. App Arquivos: toque no zip para descompactar.
+2. Safari: github.com > "+" > New repository > nome anatomia3d > Public > Create.
+3. No repositório: "uploading an existing file" > "choose your files" >
+   Procurar > abra a pasta descompactada > Selecionar > Selecionar Tudo > Abrir.
+   Espere carregar os 20 arquivos e toque em "Commit changes".
+4. Settings > Pages > Source: Deploy from a branch > main > / (root) > Save.
+5. Depois de 1 a 2 minutos abra https://SEU-USUARIO.github.io/anatomia3d/
+   Espere aparecer "Disponível offline" e toque uma vez em "Corpo".
+6. Compartilhar > Adicionar à Tela de Início. Pronto, funciona sem internet.

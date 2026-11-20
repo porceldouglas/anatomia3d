@@ -1,8 +1,8 @@
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
-import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
+import { GLTFLoader } from './GLTFLoader.js';
+import { OrbitControls } from './OrbitControls.js';
+import { mergeGeometries } from './BufferGeometryUtils.js';
+import { MeshoptDecoder } from './meshopt_decoder.module.js';
 import { CATS, INFO } from './data.js';
 
 const $ = (s) => document.querySelector(s);
@@ -42,9 +42,9 @@ addEventListener('resize', resize); resize();
 
 // ---------- Estado ----------
 const MODES = {
-  face: { file: 'models/head.glb', curves: 'models/head_curves.json', group: null, items: [], cats: {},
+  face: { file: 'head.glb', curves: 'head_curves.json', group: null, items: [], cats: {},
           defaults: { pele: [true, 0.45], musc: [true, 1], osso: [true, 1], dente: [true, 1], cart: [true, 1], olho: [true, 1], glan: [true, 1], art: [true, 1], veia: [true, 1], nerv: [true, 1] } },
-  body: { file: 'models/body.glb', curves: null, group: null, items: [], cats: {},
+  body: { file: 'body.glb', curves: null, group: null, items: [], cats: {},
           defaults: { pele: [false, 0.35], fasc: [false, 1], musc: [true, 1], osso: [true, 1], orgao: [true, 1], nervc: [true, 1] } },
 };
 let mode = 'face';

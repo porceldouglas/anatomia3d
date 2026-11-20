@@ -1,23 +1,23 @@
 // Guarda todos os arquivos no iPad na primeira visita. Depois roda sem internet.
-const CACHE = 'anatomia3d-0e4dc31b';
+const CACHE = 'anatomia3d-37fd6722';
 const FILES = [
  "./",
+ "./BufferGeometryUtils.js",
+ "./GLTFLoader.js",
+ "./OrbitControls.js",
  "./app.js",
+ "./body.glb",
  "./data.js",
- "./icons/icon-180.png",
- "./icons/icon-192.png",
- "./icons/icon-512.png",
+ "./head.glb",
+ "./head_curves.json",
+ "./icon-180.png",
+ "./icon-192.png",
+ "./icon-512.png",
  "./index.html",
- "./lib/jsm/controls/OrbitControls.js",
- "./lib/jsm/libs/meshopt_decoder.module.js",
- "./lib/jsm/loaders/GLTFLoader.js",
- "./lib/jsm/utils/BufferGeometryUtils.js",
- "./lib/three.module.js",
  "./manifest.webmanifest",
- "./models/body.glb",
- "./models/head.glb",
- "./models/head_curves.json",
- "./ta.json"
+ "./meshopt_decoder.module.js",
+ "./ta.json",
+ "./three.module.js"
 ];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));
